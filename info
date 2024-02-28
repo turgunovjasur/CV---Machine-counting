@@ -1,0 +1,3 @@
+This code is used to compute vehicles on a machine video and
+save the average number to an Excel file.
+This code used the cv2, numpy, and pandas libraries.
