@@ -66,13 +66,14 @@ while True:
         [excel_data, pd.DataFrame({'Frame': [frame_number], 'Vehicle Count': [total_vehicle_count]})],
         ignore_index=True)
 
-    if cv2.waitKey(30) & 0xFF == 27:
-        break
-
     frame_number += 1
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+# Excel faylni o'qish
+excel_data = pd.read_excel(r'D:\car\vehicle_count_data.xlsx')
+
+print(excel_data)
 
 cap.release()
 cv2.destroyAllWindows()
-
-# Excel faylni saqlash
-excel_data.to_excel(r'D:\car\vehicle_count_data.xlsx', index=False)
